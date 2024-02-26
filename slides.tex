@@ -3,6 +3,8 @@
 \begin{document}
 
 \title{Leveraging version control to accelerate research}
+\subtitle{or Lessons learned in academic software engineering\\ \small{or Don't make the mistakes I did!}}
+\author{Criston Hyett}
 
 \graphicspath{{./figs}}
 % ---------------------------------------------------------------------------%
@@ -48,8 +50,27 @@
     \item store backups
     \item create and build upon ``known states''
     \end{itemize}
-  \item Version control is often seen as a safety net, which may be why it is often ignored.
+    \only<1>{
+    \item Version control is often seen as a safety net, which may be why it is often ignored.}
+    \only<2>{
+    \item But perhaps we should view it more as a trampoline!
+    }
   \end{itemize}
+
+  \only<1>{
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{safety_net.jpg}
+    \caption{By Stead's Review, Public Domain, \url{https://commons.wikimedia.org/w/index.php?curid=3813831}}
+  \end{figure}
+}
+
+\only<2>{
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.75\textwidth]{trampoline.png}
+  \end{figure}
+  }
 \end{frame}
 % ---------------------------------------------------------------------------%
 \begin{frame}{Introduction to version control}
@@ -59,7 +80,7 @@
   I will argue that effective utilization can
   \begin{itemize}
     \only<1->{
-    \item \textbf{Reduce cognitive load}
+    \item \textbf{Reduce cognitive overhead}
       
     Utilizing \textbf{pull requests} and \textbf{branches} lowers cognitive overhead to start/continue one or multiple projects.}
 
@@ -181,25 +202,117 @@
 \end{frame}
 % ---------------------------------------------------------------------------%
 
-\section{Version Control \& Continuous Integration}
 % ---------------------------------------------------------------------------%
-\begin{frame}{}
+\begin{frame}{Github Actions}
+  \begin{itemize}
+  \item Actions are defined via a *.yml file (YAML)
+  \item Via the YAML file, you specify
+    \begin{itemize}
+    \item triggers
+    \item platform to build on
+    \item build steps
+    \item run steps
+    \item post-run steps
+    \end{itemize}
+  \item Look at established repositories for examples!!
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+% ---------------------------------------------------------------------------%
+\begin{frame}{Github Actions Examples}
   
 \end{frame}
 % ---------------------------------------------------------------------------%
 
-\section{Test-Driven Development (or hypothesis-driven science)}
+\section{Version control as a springboard}
 % ---------------------------------------------------------------------------%
-\begin{frame}{}
-  
+\begin{frame}{Version control as a springboard}
+  \begin{itemize}
+  \item \textbf{Reduce cognitive overhead}
+    
+  \item \textbf{Deliver incremental success}    
+
+  \item \textbf{Reduce technical debt}
+    
+  \item \textbf{Bake in tenants of Open Science from the start}
+
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+% ---------------------------------------------------------------------------%
+\begin{frame}{Reduce cognitive overhead}
+  \begin{itemize}
+  \item Trying to solve your problem in one step is admittedly hard, if not impossible
+  \item We're often told to break the problem down into subproblems
+  \item This is usually done informally, if at all.
+  \item Further, when working on a subproblem, its easy to get distracted by an urgent request, or a sticky sub-subproblem.
+  \item \textbf{Use issues, branches and PRs to enforce doing one thing at a time!} Not only will this improve the quality of your solutions, but it gives you a fighting chance to understand and document the effects of your solution to the subproblem.
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+% ---------------------------------------------------------------------------%
+\begin{frame}{Deliver incremental success}
+  \begin{itemize}
+  \item What is a \textbf{known state}?
+  \item Transitioning from a known state, to a known state:
+    \begin{itemize}
+    \item ensures performance is understood
+    \item gives a posteriori clarity (\textit{Why did we make that decision?})
+    \item builds trust, and allows the next, next step.
+    \item enables test-driven development (or hypothesis-driven science)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+% ---------------------------------------------------------------------------%
+\begin{frame}{Reduce (and quantify) technical debt}
+  \begin{itemize}
+  \item Enforcing an automatic process against yourself is upfront work to stop technical debt accumulation!
+  \item Post issues against your own code! What gets tracked gets managed!
+  \item Test your code early and often - bonus points if its automated as part of your workflow
+  \end{itemize}
 \end{frame}
 % ---------------------------------------------------------------------------%
 
 
-\section{Bonus: Github Projects}
 % ---------------------------------------------------------------------------%
-\begin{frame}{}
-  
+\begin{frame}{Bake in tenants of Open Science}
+  These are all nice benefits for a worker, but as an advertiser, more rigorous process enforcement during research
+  \begin{itemize}
+  \item accelerates time to publication (less to clean up, fewer open questions, etc)
+  \item makes sharing and collaborating \textit{much} easier
+  \item builds trust in the product from reviewers, colleagues $\to$ citations!
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+
+\section{Super Exciting Bonus Surprise}
+% ---------------------------------------------------------------------------%
+\begin{frame}{Templates!}
+  \begin{itemize}
+  \item Julia template project: \url{https://github.com/cmhyett/JuliaTemplate}
+
+    Runs tests, builds documentation, calculates code coverage, looks for any nasty compatibility issues, enforces standardized formatting, includes (what I think are) helpful templates for issues and PRs.
+
+  \item Github project template for project launch: \url{https://github.com/users/cmhyett/projects/3}
+
+    Enforce hypothesis-driven science! Scope your work, get to publication faster and (maybe) with a more defined contribution.
+  \end{itemize}
+\end{frame}
+% ---------------------------------------------------------------------------%
+
+% ---------------------------------------------------------------------------%
+\begin{frame}{Conlusions}
+  \begin{itemize}
+  \item In the middle of a project? That's fine - \textit{Do no harm}
+  \item The only way to learn your best practices are to do them! Try a workflow! Modify your workflow till you balance load and payoff.
+  \item If you find you like this, try to get your team to buy in. Trying to do the process for a team, by yourself is exhausting, and likely duplicates your meetings.
+  \end{itemize}
 \end{frame}
 % ---------------------------------------------------------------------------%
 
